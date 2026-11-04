@@ -94,7 +94,6 @@ class _HomeScreenState extends State<HomeScreen> {
         ,),scrollDirection: Axis.vertical,
         ),
       )
-      //Aqui pintamos las noticias
     ],),),);
   }
 
