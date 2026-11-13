@@ -1,54 +1,54 @@
-# portal_noticias
+# 📰 Portal de Noticias (Flutter)
 
-## Widgets usados
+Aplicación multiplataforma desarrollada con **Flutter** y **Dart** para consultar noticias en tiempo real en español utilizando la API de [GNews](https://gnews.io/).
 
-### AppBar
+---
 
-Widget usado para ponerle un titulo a la app
+## ✨ Características principales
 
-### Center
+- **Filtrado por categorías:** Navegación horizontal entre distintas secciones (*Globales, España, Sucesos, Deportes, Tecnología, Ciencia, Entretenimiento y Salud*).
+- **Búsqueda por texto libre:** Buscador integrado para localizar artículos por palabras clave.
+- **Caché en memoria por categoría:** Evita peticiones redundantes al cambiar entre pestañas ya consultadas.
+- **Diseño adaptable:** Interfaz limpia con indicadores de carga y tarjetas detalladas por noticia.
 
-Widget usado para centrar el contenido
+---
 
-### SingleChildScrollView
+## 🚀 Configuración y ejecución
 
-Widget usado para el scroll tanto vertical en las noticias como horizontal para el menú con scrollDirection: Axis.horizontal
+1. **Clonar el repositorio:**
+   ```bash
+   git clone https://github.com/MarioOcanaVilchez/Portal-de-noticias.git
+   cd Portal-de-noticias
+   ```
 
-### Row / Column
+2. **Instalar dependencias:**
+   ```bash
+   flutter pub get
+   ```
 
-Widgets usados para posicionar el contenido row del menu y column las noticias y el contenido de una noticia
+3. **Ejecutar inyectando tu API Key de GNews (`GNEWS_API_KEY`):**
+   ```bash
+   flutter run --dart-define=GNEWS_API_KEY=tu_api_key_aqui
+   ```
 
-### SizedBox
+---
 
-Widget usado para dejar un espacio en blanco entre dos widgets
+## 🧩 Estructura de la interfaz y Widgets utilizados
 
-### ElevatedButton 
+### Componentes principales
+- **`AppBar`**: Barra superior con el título centrado de la aplicación.
+- **`SingleChildScrollView`**: Permite el desplazamiento tanto horizontal en la barra de categorías (`scrollDirection: Axis.horizontal`) como vertical en el listado de artículos.
+- **`Row` / `Column`**: Organización estructural del menú de categorías, las tarjetas de noticias y sus metadatos.
+- **`Container` y `SizedBox`**: Contenedores para almacenar y dimensionar cada tarjeta (`width` y `height`) y definir el espaciado entre elementos.
+- **`ElevatedButton`**: Botones interactivos del selector de categorías.
+- **`TextField`**: Campo de búsqueda para filtrar noticias por texto.
+- **`Expanded`**: Ajuste dinámico del área de listado para ocupar el espacio disponible en pantalla.
+- **`CircularProgressIndicator`**: Indicador visual durante la carga asíncrona de datos.
 
-Widgets usado para los botones del menú
-
-### Container
-
-Widget usado para almazenar un widget y darle unas dimensiones width y heigth
-
-### TextField 
-
-Widget usado para crear un campo de texto el cual sirve para buscar noticias
-
-### Expanded
-
-Widget usado para que un widget se expanda hasta ocupar su máxima medida
-
-### CircularProgressIndicator 
-
-Widget usado para generar un logo de carga
-
-## Layout de la vista
-
-### vista general
-
-El layout de la vista se conforma de un menú en la parte superior con scroll horizontal para seleccionar el tipo de noticia que quieres,
-debajo un buscador para buscar noticias por texto y debajo o el logo de carga si esta cargando noticias o las noticias cargadas con scroll vertical
-
-### Noticia
-
-Una noticia se conforma de una columna con uma imagen, un titulo en negrita y grande, un subtitulo un poco mas grande que el contenido y en seminegrita, un contenido mas pequeño y una fila con dos textos con spaceBetween la fecha y el medio del que proviene la noticia
+### Estructura de cada tarjeta de noticia
+Cada artículo se presenta en una columna estructurada con:
+1. **Imagen destacada** de la noticia.
+2. **Título** principal en negrita.
+3. **Subtítulo / Descripción** en peso medio.
+4. **Resumen del contenido** truncado limpiamente.
+5. **Pie de tarjeta (`Row` con `spaceBetween`)** que muestra la fecha de publicación y el medio de origen.
